@@ -1,0 +1,35 @@
+.service-info {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.service-info-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.ant-space-item {
+  display: flex;
+  justify-content: center;
+}
+
+.service-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-info-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.service-info-two-columns .left-column {
+  text-align: left;
+}
+
+.service-info-two-columns .right-column {
+  text-align: right;
+}

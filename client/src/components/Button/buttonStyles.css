@@ -1,0 +1,85 @@
+.facebook-button {
+	background-color: #3b5998;
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid #3b5998;
+	display: flex;
+	gap: 5px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+}
+
+.facebook-button:hover {
+	background-color: white;
+	color: #3b5998;
+	opacity: 0.95;
+	transition: 0.3s;
+}
+
+.youtube-button {
+	background-color: red;
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid red;
+	display: flex;
+	gap: 5px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+}
+
+.youtube-button:hover {
+	background-color: white;
+	color: red;
+	opacity: 0.95;
+	transition: 0.3s;
+}
+
+.instagram-button {
+	background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid #833ab4;
+	display: flex;
+	gap: 5px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+}
+
+.instagram-button:hover {
+	background: white;
+	color: #833ab4;
+	border: 1px solid #833ab4;
+	opacity: 0.95;
+	transition: 0.3s;
+}
+
+.tiktok-button {
+	background: linear-gradient(to right, #ff0050, #00f2ea);
+	color: white;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid #ff0050;
+	display: flex;
+	gap: 5px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+}
+
+.tiktok-button:hover {
+	background: white;
+	color: #ff0050;
+	border: 1px solid #ff0050;
+	opacity: 0.95;
+	transition: 0.3s;
+}

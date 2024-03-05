@@ -1,0 +1,56 @@
+.dj-profile-form {
+	width: 75%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.dj-profile-form header {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+	gap: 20px;
+}
+
+.dj-profile-form header img {
+	width: 100%;
+	max-width: 300px;
+	object-fit: 1 / 1;
+}
+
+.dj-profile-form-two-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.dj-profile-form-two-columns aside {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 40px;
+}
+
+.dj-profile-form footer {
+	display: grid;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	grid-template-columns: 1fr;
+}
+
+.dj-profile-two-inputs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+	.dj-profile-form-two-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.dj-profile-two-inputs {
+		grid-template-columns: 1fr;
+	}
+}

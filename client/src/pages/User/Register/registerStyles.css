@@ -1,0 +1,6 @@
+.form-add-profile-image {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	gap: 10px;
+}

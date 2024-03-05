@@ -1,0 +1,17 @@
+.booking-modal > div {
+	display: grid;
+	grid-template-columns: 175px 1fr;
+	gap: 5px;
+	margin-bottom: 5px;
+}
+
+.booking-modal span {
+	word-wrap: break-word;
+	word-break: keep-all;
+}
+
+@media screen and (max-width: 600px) {
+	.booking-modal > div {
+		display: block;
+	}
+}
