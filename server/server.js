@@ -62,9 +62,14 @@ app.use('/api/admin', adminRoute);
 app.use('/api/dj', djRoute);
 app.use('/api/reviews', reviewRoute);
 
-const server = app.listen(process.env.PORT || 5000, () =>
-	console.log(`Serwer Node wystartował na porcie: ${server.address().port}`)
-);
+const server = app.listen(process.env.PORT || 5000, async () => {
+	console.log(`Serwer Node wystartował na porcie: ${server.address().port}`);
+	try {
+		await checkTokenValidity();
+	} catch (error) {
+		console.log(error);
+	}
+});
 
 swaggerConfig(app);
 

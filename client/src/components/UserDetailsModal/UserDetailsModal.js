@@ -11,7 +11,7 @@ const UserDetailsModal = ({ modalOpen, handleCancel, booking, user }) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			setLoading(true);
+			setLoading(false);
 			if (user && user._id) {
 				setUserData(user);
 			} else if (booking && booking.userInfo) {
@@ -45,7 +45,6 @@ const UserDetailsModal = ({ modalOpen, handleCancel, booking, user }) => {
 					console.error(error);
 				}
 			}
-			setLoading(false);
 		};
 
 		fetchData();

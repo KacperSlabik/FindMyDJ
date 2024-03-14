@@ -3,10 +3,11 @@ import { Modal, Image, Skeleton } from 'antd';
 import '../BookingDetailsModal/bookingDetailsModalStyles.css';
 import { Link } from 'react-router-dom';
 import StatusIndicator from '../StatusIndicator/StatusIndicator';
-import axiosInstance from '../../services/axiosInstance';
 
 const DjDetailsModal = ({ modalOpen, handleCancel, booking, dj }) => {
 	const [loading, setLoading] = useState(true);
+
+	const userData = booking?.djInfo ?? dj;
 
 	useEffect(() => {
 		setLoading(false);
@@ -24,9 +25,6 @@ const DjDetailsModal = ({ modalOpen, handleCancel, booking, dj }) => {
 			</Modal>
 		);
 	}
-
-	const userData = booking?.userInfo; // Dane użytkownika z booking.userInfo
-	const djData = dj; // Dane DJ-a z propsa dj
 
 	let profilePicture = (
 		<span className='dj-default-icon rounded w-25'>
@@ -54,22 +52,28 @@ const DjDetailsModal = ({ modalOpen, handleCancel, booking, dj }) => {
 	let tiktok = '';
 	let activeSessions = [];
 
-	if (djData) {
-		id = djData._id;
-		firstName = djData.firstName;
-		lastName = djData.lastName;
-		alias = djData.alias;
-		profileImage = djData.profileImage;
-		email = djData.email;
-		phoneNumber = djData.phoneNumber;
-		city = djData.city;
-		postalCode = djData.postalCode;
-		facebook = djData.facebook;
-		instagram = djData.instagram;
-		youtube = djData.youtube;
-		tiktok = djData.tiktok;
-		activeSessions = djData.activeSessions || [];
+	console.log();
+
+	if (userData) {
+		id = userData._id;
+		firstName = userData.firstName;
+		lastName = userData.lastName;
+		alias = userData.alias;
+		profileImage = userData.profileImage;
+		email = userData.email;
+		phoneNumber = userData.phoneNumber;
+		city = userData.city;
+		postalCode = userData.postalCode;
+		facebook = userData.facebook;
+		instagram = userData.instagram;
+		youtube = userData.youtube;
+		tiktok = userData.tiktok;
+		activeSessions = userData.activeSessions || [];
 	}
+
+	const isOnline = userData && userData.activeSessions?.[0]?.token;
+	const lastActiveSession =
+		userData && userData.activeSessions?.[0]?.lastModified;
 
 	profilePicture = (
 		<Image
@@ -81,10 +85,6 @@ const DjDetailsModal = ({ modalOpen, handleCancel, booking, dj }) => {
 		/>
 	);
 
-	const isOnline = userData && userData.activeSessions?.[0]?.token;
-	const lastActiveSession =
-		userData && userData.activeSessions?.[0]?.lastModified;
-
 	return (
 		<Modal
 			title='Szczegóły DJ-a'
@@ -94,7 +94,7 @@ const DjDetailsModal = ({ modalOpen, handleCancel, booking, dj }) => {
 			}}
 			footer={null}
 		>
-			{djData ? (
+			{userData ? (
 				<div className='booking-modal'>
 					<h6>Dane:</h6>
 

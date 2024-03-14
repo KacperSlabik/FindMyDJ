@@ -1,5 +1,5 @@
-import 'antd/dist/antd';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Button, Result } from 'antd';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import ProtectedRoute from './routes/ProtectedRoute';
@@ -226,6 +226,21 @@ function App() {
 							<ProtectedRoute>
 								<DjBookings />
 							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/*'
+						element={
+							<Result
+								status='404'
+								title='404'
+								subTitle='Przepraszamy, ta strona nie istnieje.'
+								extra={
+									<Button type='primary'>
+										<Link to='/app'>Powrót do strony głównej</Link>
+									</Button>
+								}
+							/>
 						}
 					/>
 				</Routes>
